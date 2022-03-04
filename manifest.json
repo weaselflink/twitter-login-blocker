@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Twitter Login Blocker",
+  "version": "1.0",
+  "description": "Stops twitter login overlay appearing.",
+  "icons": {
+    "48": "icons/build_black_24dp.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.twitter.com/*"
+      ],
+      "js": [
+        "login-blocker.js"
+      ]
+    }
+  ]
+}
