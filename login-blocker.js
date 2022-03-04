@@ -19,11 +19,10 @@ const htmlCallback = function(mutationsList) {
 
 const layersCallback = function(mutationsList) {
     for(const mutation of mutationsList) {
-        if (mutation.type === 'childList') {
+        if (mutation.type === 'childList' || mutation.type === 'subtree') {
             const loginLayers = [...mutation.addedNodes]
                 .filter(node => isLoginLayer(node))
 
-            console.log(`>>>>>>>>>> loginLayers: ${loginLayers.length}`);
             loginLayers.forEach(node => node.style.display = 'none');
         }
     }
