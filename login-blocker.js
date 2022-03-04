@@ -1,5 +1,6 @@
 
-console.log(`>>>>>>>>>> Twitter Login Blocker running`);
+const logPrefix = '>>>>>>>>>> Twitter Login Blocker';
+console.log(`${logPrefix} running`);
 
 const htmlElement = document.querySelector("html");
 const layersElement = document.querySelector("div#layers");
@@ -23,7 +24,10 @@ const layersCallback = function(mutationsList) {
             const loginLayers = [...mutation.addedNodes]
                 .filter(node => isLoginLayer(node))
 
-            loginLayers.forEach(node => node.style.display = 'none');
+            loginLayers.forEach(node => {
+                console.log(`${logPrefix} login layer blocked`);
+                return node.style.display = 'none';
+            });
         }
     }
 };
