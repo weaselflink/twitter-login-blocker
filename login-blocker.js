@@ -20,6 +20,7 @@ const htmlCallback = function (mutationsList) {
 const keepHiddenCallback = function (mutationsList) {
     for (const mutation of mutationsList) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+            console.log(`${logPrefix} login layer kept hidden`);
             mutation.target.style.display = 'none';
         }
     }
