@@ -48,7 +48,7 @@ function init() {
 		const layersObserver = new MutationObserver(layersCallback);
 		layersObserver.observe(
 			layerElement,
-			{childList: true, subtree: true}
+			{childList: true}
 		);
 
 		const htmlElement = document.querySelector("html");
