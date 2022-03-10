@@ -6,7 +6,9 @@ const isLoginLayer = function (node) {
 const htmlCallback = function (mutationsList) {
 	for (const mutation of mutationsList) {
 		if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-			mutation.target.style.overflow = null;
+			const node = mutation.target;
+			node.style.overflow = null;
+			node.style.marginRight = null;
 		}
 	}
 };
@@ -30,7 +32,7 @@ const layersCallback = function (mutationsList) {
 				console.log(`${logPrefix} login layer blocked`);
 				const keepHiddenObserver = new MutationObserver(keepHiddenCallback);
 				keepHiddenObserver.observe(node, {attributeFilter: ['style']});
-				return node.style.display = 'none';
+				node.style.display = 'none';
 			});
 		}
 	}
