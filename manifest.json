@@ -15,5 +15,12 @@
         "login-blocker.js"
       ]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{bd7d2242-0a6a-4927-9611-995f9c120a39}",
+      "strict_min_version": "42.0",
+      "strict_max_version": "*"
+    }
+  }
 }
